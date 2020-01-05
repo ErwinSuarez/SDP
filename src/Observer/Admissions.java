@@ -3,7 +3,6 @@ package Observer;
 public class Admissions implements Observing{
 
     private String deptName;
-    private String msg;
     private Observable observable;
 
     Admissions(String deptName){
@@ -12,8 +11,11 @@ public class Admissions implements Observing{
 
     @Override
     public void update() {
-        msg = (String)observable.getUpdate(this);
-
+        String msg = (String)observable.getUpdate(this);
+        if(msg == null)
+            System.out.printf("%s: NO new message\n", deptName);
+        else
+            System.out.printf("%s: message received: %s\n",deptName,msg );
     }
 
     @Override

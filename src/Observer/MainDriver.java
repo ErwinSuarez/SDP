@@ -16,6 +16,21 @@ public class MainDriver {
         reception.registerObserver(admin4);
         reception.registerObserver(admin5);
 
+        admin1.setObservable(reception);
+        admin2.setObservable(reception);
+        admin3.setObservable(reception);
+        admin4.setObservable(reception);
+        admin5.setObservable(reception);
+
+        admin1.update();
+
+        reception.postMessage("Patient on the way");
+
+        reception.removeObserver(admin4);
+
+        admin2.update();
+
+        reception.postMessage(null);
 
     }
 }

@@ -25,8 +25,9 @@ public class Reception implements Observable {
     @Override
     public void notifyObserver() {
         List<Observing> observers = new ArrayList<>(this.observing);
-        for(Observing observ: observers)
+        for(Observing observ: observers) {
             observ.update();
+        }
     }
 
     @Override
@@ -34,8 +35,8 @@ public class Reception implements Observable {
         return message;
     }
 
-    public void postMessage(String msg){
-        System.out.println("Posted message: " + msg);
+    void postMessage(String msg){
+        System.out.printf("\nPosted message: %s\n",msg);
         message = msg;
         notifyObserver();
     }
