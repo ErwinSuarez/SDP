@@ -7,10 +7,9 @@ public class Reception implements Observable {
 
     private List<Observing> observing;
     private String message;
-    private String patient;
 
     Reception(){
-        new ArrayList<>();
+        this.observing = new ArrayList<>();
     }
 
     @Override
@@ -36,7 +35,8 @@ public class Reception implements Observable {
     }
 
     public void postMessage(String msg){
-        System.out.println("New message: " + msg);
+        System.out.println("Posted message: " + msg);
+        message = msg;
         notifyObserver();
     }
 }

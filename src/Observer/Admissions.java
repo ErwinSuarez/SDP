@@ -2,18 +2,18 @@ package Observer;
 
 public class Admissions implements Observing{
 
-    private String docname;
-    private String messageRequest;
-    private String patient;
+    private String deptName;
+    private String msg;
     private Observable observable;
 
-    public Admissions(Observable observable){
-        this.observable = observable;
-        observable.registerObserver(this);
+    Admissions(String deptName){
+        this.deptName = deptName;
     }
+
     @Override
     public void update() {
-        showList();
+        msg = (String)observable.getUpdate(this);
+
     }
 
     @Override
@@ -21,7 +21,4 @@ public class Admissions implements Observing{
         this.observable = observable;
     }
 
-    private void showList() {
-        System.out.println("ADMISSION\nPatient: " + patient + " is being requested to have: " + messageRequest + " by Dr. " + docname);
-    }
 }
