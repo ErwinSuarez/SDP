@@ -17,6 +17,7 @@ public class MainDriver {
         thirdInstance.str = thirdInstance.toString();
         System.out.println(thirdInstance);
         System.out.println("Same here, there should be a different reference point");
+        System.out.println("You are accessing the same instance of Singleton");
 
     }
 }

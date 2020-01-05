@@ -3,7 +3,7 @@ package Singleton;
 class SingletonPattern {
 
     String str;
-    private static SingletonPattern ourInstance = null;
+    private static SingletonPattern ourInstance;
 
     static SingletonPattern getInstance() {
         if (ourInstance == null)
