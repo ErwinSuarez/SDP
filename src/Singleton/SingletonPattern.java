@@ -1,13 +1,17 @@
 package Singleton;
 
-public class SingletonPattern {
+class SingletonPattern {
 
-    private static SingletonPattern ourInstance = new SingletonPattern();
+    String str;
+    private static SingletonPattern ourInstance = null;
 
-    public static SingletonPattern getInstance() {
+    static SingletonPattern getInstance() {
+        if (ourInstance == null)
+            ourInstance = new SingletonPattern();
         return ourInstance;
     }
 
     private SingletonPattern() {
+        str = "Creating first instance";
     }
 }
