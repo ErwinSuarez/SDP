@@ -6,7 +6,7 @@ import java.util.List;
 public class Reception implements Observable {
 
     private List<Observing> observing;
-    private String messageRequest;
+    private String message;
     private String patient;
 
     Reception(){
@@ -32,7 +32,7 @@ public class Reception implements Observable {
 
     @Override
     public Object getUpdate(Observing observing) {
-        return messageRequest;
+        return message;
     }
 
     public void postMessage(String msg){
